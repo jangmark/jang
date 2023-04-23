@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Spectral by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets//css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets//css/noscript.css" /></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">유가 예측 프로그램</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="generic.html">Generic</a></li>
+											<li><a href="elements.html">Elements</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>유가 예측 프로그램</h2>
+							<p>목표 : 20년 동안의 유가예측 프로그램 예측<br />
+							<br />
+							<ul class="actions special">
+								<li><a href="#" class="button primary">Activate</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Learn More</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>'ProductID' : '제품ID'</h2>
+								<h2>'Weight' : '제품의 무게</h2>
+								<h2>/'FatContent' : '제품의 지방의 함량'</h2>
+								<h2>'ProductVisibility' : 제품 가시성(특정 제품에 할당된 매장 내 모든 제품의 전체 디스플레이 영역 비율)</h2>
+								<h2>'ProductType' : 상품 유형</h2>
+								<h2>/'MRP' : 제품의 최대 소매 가격(정가)</h2>
+								<h2>'OutletID' : 고유 매장 ID</h2>
+								<h2>/'EstablishmentYear' : 매장 설립 연도</h2>
+								<h2>'OutletSize' : 매장 규모</h2>
+								<h2>/'LocationType' : 위치 유형</h2>
+								<h2>'OutletType': 매장 타입</h2>
+								<h2>/'OutletSales': 매장 매출 ('종속변수')</h2>
+							</header>
+							<ul class="icons major">
+								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
+							</ul>
+						</div>
+					</section>
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+					<head>
+						<meta charset="UTF-8">
+						<title>상관관계 분석</title>
+					</head>
+					<!-- <body align="center">
+					<form>
+						<h2>상관관계 분석</h2>
+						<div style='text-align:center; background-color:darkblue; margin: auto;padding:50px;'>
+							<input id="PI" type="text" placeholder="제품ID" name="PRODUCTID"> &nbsp&nbsp
+							<input id="FA" type="text" placeholder="지방의 함량" name="FATCONTENT">&nbsp&nbsp
+							<input id="PR" type="text" placeholder="가시성" name="PRODUCTVISIBILITY"> &nbsp&nbsp
+							<input id="MR" type="text" placeholder="정가" name="MRP">&nbsp&nbsp
+							<input id="OU" type="text" placeholder="매장 ID" name="OUTLETID"> &nbsp&nbsp
+							<input id="ES" type="text" placeholder="설립 연도" name="ESTABLISHMENTYEAR">&nbsp&nbsp
+							<input id="OL" type="text" placeholder="매장 규모" name="OUTLETSIZE"> &nbsp&nbsp
+							<input id="LO" type="text" placeholder="위치 유형" name="LOCATIONTYPE">&nbsp&nbsp
+							<input id="TY" type="text" placeholder="매장 타입" name="OUTLETTYPE">&nbsp&nbsp
+							<input type="submit" value="분석";background-color=white></br>
+
+
+							<p><font color='blue'></font></p>
+						</div>
+					</body> -->
+					
+					<head>
+						<title>Linear Regression</title>
+					</head>
+					<body>
+						<h1>Linear Regression3 Example</h1>
+						<form action="http://localhost:5000/result" method="POST">
+							<input id="PI" type="text" placeholder="제품ID" name="PRODUCTID"> &nbsp&nbsp
+							<input id="WE" type="text" placeholder="제품무게" name="Weight"> &nbsp&nbsp
+							<input id="FA" type="text" placeholder="지방의 함량" name="FATCONTENT">&nbsp&nbsp
+							<input id="PR" type="text" placeholder="가시성" name="PRODUCTVISIBILITY"> &nbsp&nbsp
+							<input id="MR" type="text" placeholder="정가" name="MRP">&nbsp&nbsp
+							<input id="OU" type="text" placeholder="매장 ID" name="OUTLETID"> &nbsp&nbsp
+							<input id="ES" type="text" placeholder="설립 연도" name="ESTABLISHMENTYEAR">&nbsp&nbsp
+							<input id="OL" type="text" placeholder="매장 규모" name="OUTLETSIZE"> &nbsp&nbsp
+							<input id="LO" type="text" placeholder="위치 유형" name="LOCATIONTYPE">&nbsp&nbsp
+							<input id="TY" type="text" placeholder="매장 타입" name="OUTLETTYPE">&nbsp&nbsp
+							
+							<button type="submit">분석</button>
+						</form>
+						{% if prediction %}
+						<p>Prediction: {{ prediction }}</p>
+						{% endif %}
+					</body>
+
+
+				<!-- Footer -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/assets//js/jquery.min.js"></script>
+			<script src="static/assets//js/jquery.scrollex.min.js"></script>
+			<script src="static/assets//js/jquery.scrolly.min.js"></script>
+			<script src="static/assets//js/browser.min.js"></script>
+			<script src="static/assets//js/breakpoints.min.js"></script>
+			<script src="static/assets//js/util.js"></script>
+			<script src="static/assets//js/main.js"></script>
+
+	</body>
+</html>
